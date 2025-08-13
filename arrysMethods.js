@@ -1,17 +1,29 @@
 
 
-const testArr =[1,2,3,4,5,6,7,8,9]
 //for the myMap method
 
-const myMap = testArr.map(a=>a*2)
+Array.prototype.myMap= function(callBackFun){
+    let result = []
+    for( i =0 ; i<this.length; i++){
+        if(i in this){
+            result.push(callBackFun(this[i],i,this))
+        }
+    }
+    return result
+}
 //About filter method
 
-const myFilter = testArr.filter(a=>a%2 ===0)
+Array.prototype.MyFilter= function(callBackFun){
+    let result =[]
+    for(i=0; i<this.length;i++){
+        if( i in this){
+result.push(callBackFun(this[i],i,this))
+}
+}
+return result
+}
+// this phase if for testin the custom method i have created
 
-//About for each method
-
-const myForEach = testArr.forEach((el,index,arr)=>{
-    console.log(`the element was${el} 
-        on index of${index}
-         and the the actual array was ${arr}`)
-})
+const testArr =[1,2,3,4,5,6,7,8,9]
+const myMapResult= testArr.myMap(num=>num*2)
+console.log(myMapResult)
