@@ -53,3 +53,18 @@ console.log(MyFilterResult)
 // Test for mayForEach custon method 
 const myForEachResult = testArr.myForEach(a=> console.log(`element is ${a}`))
 console.log(myForEachResult)
+
+Array.prototype.myLength = function(){
+  let count =0
+  for(i=0 ; i<this.length; i++){
+    
+      count++
+    
+  }
+  return count
+}
+// test for custom length method
+
+const lengthTestArr = ['1','4']
+const lengthTestArrResult = lengthTestArr.myLength()
+  console.log(lengthTestArrResult)
