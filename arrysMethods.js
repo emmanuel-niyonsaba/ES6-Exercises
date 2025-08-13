@@ -28,12 +28,15 @@ return result
 
 //this if for the myForEach custom method
 
-Array.prototype.myForEach = function(callBackFun){
-    if(i in this){
-        callBackFun(this[i],i,this)
+Array.prototype.myForEach = function (callbackFn) {
+  for (let i = 0; i < this.length; i++) {
+    if (i in this) {
+      callbackFn(this[i], i, this);
     }
+  }
+ 
+};
 
-}
 // this phase if for testin the custom method i have created
 
 const testArr =[1,2,3,4,5,6,7,8,9]
@@ -48,7 +51,5 @@ console.log(MyFilterResult)
 
 
 // Test for mayForEach custon method 
-const myForEachResult = testArr.myForEach((a)=>{
-    console.log(a)
-})
-myForEachResult()
+const myForEachResult = testArr.myForEach(a=> console.log(`element is ${a}`))
+console.log(myForEachResult)
