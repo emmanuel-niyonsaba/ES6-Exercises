@@ -25,3 +25,15 @@ return this[0].toUpperCase()+this.slice(1)
 const stringInput = "john"
 const capitalizeResult =capitalize.call(stringInput)
 console.log(capitalizeResult)
+
+// this is for calculating the discount  with bind method
+
+function discountFinder(price,discount){
+return price -( price*discount)/100
+
+}
+const discount10 = discountFinder.bind(null,10)
+const discount50 = discount10(50)
+console.log(discount50)
+const discount100 = discount10(100)
+console.log(discount50)
