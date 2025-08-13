@@ -12,4 +12,7 @@ function calculateArea (){
 const objArea = calculateArea.bind(obj1)
 console.log(objArea())
 
-//
+//Below code is about how i can find the max by apply
+const numbers = [34, 12, 57, 28, 91]
+const maxApply = Math.max.apply(null,numbers)
+console.log(maxApply)
