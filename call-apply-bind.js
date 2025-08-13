@@ -16,3 +16,12 @@ console.log(objArea())
 const numbers = [34, 12, 57, 28, 91]
 const maxApply = Math.max.apply(null,numbers)
 console.log(maxApply)
+
+// Next is for capitalize the first letter
+
+function capitalize (string){
+return this[0].toUpperCase()+this.slice(1)
+}
+const stringInput = "john"
+const capitalizeResult =capitalize.call(stringInput)
+console.log(capitalizeResult)
