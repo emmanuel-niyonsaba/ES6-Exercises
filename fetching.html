@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fetching here</h1>
+    <script>
+        const BULBASAUR_POKEMONS_URL = 'https://pokeapi.co/api/v2/pokemon/bulbasaur';
+const RATICATE_POKEMONS_URL = 'https://pokeapi.co/api/v2/pokemon/raticate';
+const KAKUNA_POKEMONS_URL = 'https://pokeapi.co/api/v2/pokemon/kakuna';
+
+const testAPI ='https://dummyjson.com/users'
+
+
+ async function fetchData (api){
+    try {
+        
+         const data = await fetch(api)
+    
+     const result= await data.json()
+     return result
+        
+    } catch (error) {
+        console.log(error)
+        
+    }
+  
+     
+      
+}
+const data1 = fetchData(BULBASAUR_POKEMONS_URL)
+console.log(data1)
+    </script>
+</body>
+</html>
